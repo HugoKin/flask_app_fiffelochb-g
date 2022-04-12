@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fiffel & Båg AB</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+   <div class="cont">
+       <div class="form"></div>
+       <h2 class="logo">Fiffel & båg AB</h2>
+       <form action="output" method="post">
+       <label>
+           <span>Namn:</span>
+           <input type="name" name="name_input">
+       </label>
+       <label>
+           <span>Ange bilmärke:</span>
+           <input type="bilmärke" name="bilmärke_input">
+       </label>
+       <label>
+           <span>Ange Bilmodel:</span>
+           <input type="bilmodel" name="bilmodel_input">
+       </label>
+       <label>
+           <span>Ange årsmodel:</span>
+           <input type="orsmodel" name="orsmodel_input">
+       </label>
+       <label>
+           <span>Hur många mil har din bil gått?</span>
+           <input type="mil" name="mil_input">
+       </label>
+       <input type="submit" value="Skicka förfrågan" id="submit">
+       </form>
+       
+       <div class="sub-cont">
+           <div class="img">
+               <div class="img-text">
+                   {%for message in get_flashed_messages()%}
+                   <p>{{message}}</p>
+                   {%endfor%}
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
